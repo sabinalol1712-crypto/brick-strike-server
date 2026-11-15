@@ -1,0 +1,18 @@
+# Автозапуск сервера Brick Strike через systemd.
+# 1) поправь путь в WorkingDirectory на папку, где лежит server.js
+# 2) sudo cp brick-strike.service /etc/systemd/system/
+# 3) sudo systemctl daemon-reload && sudo systemctl enable --now brick-strike
+# Журнал: sudo journalctl -u brick-strike -f
+[Unit]
+Description=Brick Strike game server
+After=network.target
+
+[Service]
+WorkingDirectory=/root/brick-strike-server
+ExecStart=/usr/bin/env node server.js
+Environment=PORT=3100
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

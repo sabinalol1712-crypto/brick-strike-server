@@ -1,0 +1,13 @@
+{
+  "name": "brick-strike-server",
+  "version": "2.9.0",
+  "description": "Brick Strike 2.7: сервер сетевой игры (командный бой с ботами, бомба, рейтинг, пати, оружие на земле), без сторонних пакетов",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
